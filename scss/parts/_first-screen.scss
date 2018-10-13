@@ -1,0 +1,78 @@
+.first-screen {
+
+  // indicators
+  .carousel-indicators {
+    li {
+      height: 10px;
+      width: 10px;
+      background: none;
+      border: 1px solid #c2c2c2;
+      border-radius: 50%;
+    }
+
+    .active {
+      background: $main-accent-color;
+      border-color: $main-accent-color;
+    }
+  } // indicators
+
+  // carousel list
+  .carousel-inner {
+    li {
+      &:after {
+        @extend %gradient-filter;
+      }
+
+      img {
+        width: 100vw;
+        height: 60vh;
+        @media screen and (max-width: 600px) and (orientation : landscape){
+          height: 100vh;
+        }
+
+        @media screen and (min-width: 600px) and (max-width: 768px) {
+          height: 50vh;
+        }
+
+        @media screen  and (min-width: 769px){
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .carousel-caption {
+    bottom: 20px;
+    @media screen  and (min-width: 768px){
+      bottom: 20%;
+    }
+
+    p.slider-header {
+      font: $slider-caption-font-mobile;
+      text-transform: capitalize;
+      letter-spacing: 0.32px;
+      &:after {
+        @include section-header-underline($main-accent-color, 50px, 1px, 1);
+      }
+      @media screen  and (min-width: 768px){
+        font: $slider-caption-font;
+      }
+    }
+
+    p.slider-excerpt {
+      @include section-common-text($common-font-mobile, 1, .7px, $header-text-color, center);
+      margin: 15px 0 20px;
+      @media screen  and (min-width: 768px){
+        @include section-common-text($common-font, 1, .7px, $header-text-color, center);
+        margin: 30px 0 50px;
+      }
+    }
+
+    p.slider-link a {
+      @include link-buttons($main-accent-color, $main-accent-color, $link-button-font-mobile, 10px, $main-accent-color, $header-text-color);
+      @media screen  and (min-width: 768px){
+        @include link-buttons($main-accent-color, $main-accent-color, $link-button-font, 15px, $main-accent-color, $header-text-color);
+      }
+    }
+  }
+}

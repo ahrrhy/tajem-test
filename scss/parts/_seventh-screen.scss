@@ -1,0 +1,51 @@
+.seventh-screen {
+  padding: 3% 0;
+
+  .contact-form-title {
+    @include section-header($section-header-font, $main-text-color, left);
+    margin-bottom: 50px;
+  }
+
+  form {
+    ul {
+      @extend %reset-list;
+      li label {
+        margin-bottom: 0;
+      }
+
+      li {
+        margin-bottom: 22px;
+
+        input[type="text"], input[type="email"], textarea {
+          border-radius: 0;
+          border: 1px solid rgba(0, 0, 0, .1);
+          padding: 18px 20px;
+          width: 100%;
+          resize: none;
+
+          &::placeholder {
+            text-transform: capitalize;
+            @include section-common-text($common-font, .7, .7px, $main-text-color, left);
+          }
+        }
+
+        input[type="submit"] {
+          @include link-buttons($main-accent-color, $main-accent-color, $link-button-font, 32px, $main-accent-color, $header-text-color);
+          background: none;
+        }
+      }
+    }
+  }
+
+  .customers-list {
+    @extend %reset-list;
+
+    li {
+      margin-bottom: 30px;
+      padding: 20px 0;
+      &:nth-child(even) {
+        text-align: right;
+      }
+    }
+  }
+}

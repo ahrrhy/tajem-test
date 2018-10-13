@@ -1,0 +1,57 @@
+.fifth-screen {
+  padding: 3% 0;
+
+  header {
+    margin-bottom: 20px;
+    @media screen  and (min-width: 768px){
+      margin-bottom: 50px;
+    }
+
+    h4 {
+      @include section-header($section-header-font, $main-text-color, left);
+    }
+
+    a {
+      @include section-common-text($common-font, 1, .7px, $main-text-color, center);
+      text-decoration: none;
+
+      &:after {
+        content: ">";
+        display: inline-block;
+        margin-left: 10px;
+        transition: .2s all ease;
+      }
+
+      &:hover {
+        &:after {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+
+  .works-list {
+    @extend %reset-list;
+    padding: 15px 0;
+    margin: 10px 0;
+
+    @media screen  and (min-width: 769px){
+      padding: 25px 0;
+      margin: 25px 0;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .load-works {
+    margin-top: 25px;
+    @include link-buttons($main-accent-color, $main-accent-color, $link-button-font, 15px, $main-accent-color, $header-text-color);
+  }
+}

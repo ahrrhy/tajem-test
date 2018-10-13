@@ -1,0 +1,111 @@
+.sixth-screen {
+  padding: 3% 0;
+  position: relative;
+  &:before {
+    @extend %gradient-filter;
+  }
+
+  div.carousel {
+    padding-bottom: 25%;
+    @media screen  and (min-width: 600px) and (max-width: 768px) {
+      padding-bottom: 10%;
+    }
+    @media screen  and (min-width: 769px){
+      padding-bottom: 5%;
+    }
+
+    .carousel-indicators {
+      bottom: 0;
+      li {
+        height: 35px;
+        width: 35px;
+        margin: 5px;
+        background: none;
+        border: 1px solid #c2c2c2;
+        border-radius: 50%;
+        text-indent: 0;
+        overflow: hidden;
+
+        @media screen  and (min-width: 769px){
+          margin: 0 8px;
+          height: 45px;
+          width: 45px;
+        }
+
+        &.active {
+          transform: scale(1.4, 1.4);
+        }
+      }
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+      top: unset;
+      bottom: 8%;
+      z-index: 100;
+    }
+
+    .carousel-control-next {
+      right: 3%;
+      @media screen  and (min-width: 600px) {
+        right: 20%;
+      }
+    }
+
+    .carousel-control-prev {
+      left: 3%;
+      @media screen and (min-width: 600px) {
+        left: 20%;
+      }
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background: none;
+    }
+
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+      &:after {
+        font: 600 25px/1 'PlayfairDisplay';
+        color: #fff;
+        opacity: .7;
+      }
+    }
+
+    .carousel-control-next-icon:after {
+      content: ">";
+    }
+
+    .carousel-control-prev-icon:after {
+      content: "<";
+    }
+
+
+    blockquote {
+      @include section-common-text($testimonials-font-mobile, .85, 1.3px, $header-text-color, center);
+      @media screen  and (min-width: 769px){
+        @include section-common-text($testimonials-font, .85, 1.3px, $header-text-color, center);
+      }
+      &:before {
+        content: "\201C";
+        display: block;
+        font: 600 80px/1 'PlayfairDisplay';
+
+        @media screen  and (min-width: 769px){
+          font: 600 100px/1.5 'PlayfairDisplay';
+        }
+      }
+    }
+
+    p.customer-name {
+      text-transform: uppercase;
+      margin-bottom: 0;
+      @include item-header($item-header-font, .7px, $header-text-color);
+    }
+
+    p.customer-position {
+      @include section-common-text($common-font, .7, normal, $header-text-color, center);
+    }
+  }
+}

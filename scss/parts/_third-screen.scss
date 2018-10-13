@@ -1,0 +1,78 @@
+.third-screen {
+  margin-bottom: 3%;
+
+  .section-header {
+    @include section-header($section-header-font, $main-text-color, center);
+    &:after {
+      @include section-header-underline($main-text-color, 50px, 2px, .3);
+      margin-bottom: 50px;
+    }
+
+    .section-description {
+      margin: 18px 0;
+      @include section-header-description($section-header-description, $main-text-color-light, .75);
+    }
+  }
+
+  .expertise-list {
+    @extend %reset-list;
+    text-align: center;
+    li {
+      padding: 15px 5px;
+      @media screen  and (min-width: 769px){
+        padding: 32px;
+      }
+
+      &:first-child, &:nth-child(2) {
+        border-bottom: 1px solid #ebebeb;
+      }
+
+      &:nth-child(2) {
+        border-right: none;
+        @media screen  and (min-width: 768px){
+          border-right: 1px solid #ebebeb;
+        }
+      }
+
+      &:first-child {
+        border-right: 1px solid #ebebeb;
+      }
+
+      &:nth-child(3) {
+        border-right: 1px solid #ebebeb;
+        border-bottom: 1px solid #ebebeb;
+        @media screen  and (min-width: 768px){
+          border-right: none;
+        }
+      }
+
+      &:nth-child(5) {
+        border-right: 1px solid #ebebeb;
+      }
+      &:nth-child(4) {
+        border-bottom: 1px solid #ebebeb;
+        @media screen  and (min-width: 768px){
+          border-right: 1px solid #ebebeb;
+          border-bottom: none;
+        }
+      }
+
+
+      .equalizer {
+        display: block;
+        height: 50px;
+      }
+
+      .expertise-title {
+        margin: 25px 0;
+        @include item-header($item-header-font, .7px, $main-text-color);
+      }
+
+      .expertise-description {
+        @include section-common-text($common-font, .75, .7px, #333, center);
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+  }
+}

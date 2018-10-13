@@ -1,0 +1,65 @@
+#teams {
+  position: relative;
+  padding: 3% 0;
+  &:before {
+    @extend %gradient-filter;
+  }
+
+  .section-header {
+    @include section-header($section-header-font, $header-text-color, center);
+    &:after {
+      @include section-header-underline($header-text-color, 50px, 2px, .2);
+      margin-bottom: 50px;
+    }
+
+    .section-description {
+      margin: 18px 0;
+      @include section-header-description($section-header-description, $header-text-color, .75);
+    }
+  }
+
+  .teams-list {
+    @extend %reset-list;
+    text-align: center;
+
+    li {
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 50px;
+      }
+
+      .bordered-box {
+        border: 1px solid rgba(225, 225, 225, .5);
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .teams-title {
+      margin: 20px 0 0;
+      @include item-header($item-header-font, .7px, $header-text-color);
+    }
+
+    .teams-description {
+      margin-bottom: 28px;
+      @include section-common-text($common-font, .7, normal, $header-text-color, center);
+    }
+  }
+
+  .hiring-request {
+    margin-top: 25px;
+    @include section-common-text($common-font, 1, .7px, #f3f3f3, center);
+
+    span {
+      display: block;
+      margin-top: 25px;
+    }
+
+    .hiring-link {
+      @include link-buttons($main-accent-color, $main-accent-color, $link-button-font, 15px, $main-accent-color, $header-text-color);
+    }
+  }
+}
